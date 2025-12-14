@@ -643,16 +643,16 @@ export const addToWishlist = async (productId) => {
 };
 
 export const getAllOffers = async () => {
-  const response = await api.get("offers");
+  const response = await publicApi.get("offers");
   return response.data;
 };
 export const getAllSliders = async () => {
-  const response = await api.get("sliders");
+  const response = await publicApi.get("sliders");
   return response.data;
 };
 
 export const getallBranches = async () => {
-  const response = await api.get("branches");
+  const response = await publicApi.get("branches");
   console.log(response);
 
   return response.data;

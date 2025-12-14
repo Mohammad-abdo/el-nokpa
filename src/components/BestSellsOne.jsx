@@ -35,12 +35,17 @@ const BestSellsOne = () => {
   useEffect(() => {
     offers();
     getProductsNewOffers();
-  }, [offer]);
+  }, []);
   const offers = async () => {
     try {
       const res = await getAllOffers();
-      setOffer(res.data[2]);
-    } catch (error) {}
+      const offersData = Array.isArray(res.data) ? res.data : res.data?.data || [];
+      // Get the third offer (index 2) or the first one if less than 3 exist
+      setOffer(offersData[2] || offersData[0] || {});
+    } catch (error) {
+      console.error("Error fetching offers:", error);
+      setOffer({});
+    }
   };
   useEffect(() => {
     const interval = setInterval(() => {
@@ -184,11 +189,11 @@ const BestSellsOne = () => {
                   className="position-absolute inset-block-start-0 inset-inline-start-0 z-n1 w-100 h-100 cover-img"
                 />
                 <div className="d-xxl-block d-none">
-                  <img src={offer.image} alt="" />
+                  {offer?.image && <img src={offer.image} alt={offer.title || ""} />}
                 </div>
               </div>
               <div className="py-xl-4">
-                <h4 className="mb-8">{offer.title}</h4>
+                <h4 className="mb-8">{offer?.title || "Special Offer"}</h4>
                 <div className="countdown my-32" id="countdown5">
                   <ul className="countdown-list style-two flex-center flex-wrap">
                     <li className="countdown-list__item text-heading flex-align gap-4 text-sm fw-medium colon-white">

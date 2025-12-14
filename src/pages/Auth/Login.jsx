@@ -60,13 +60,16 @@ const Login = () => {
         setError("Invalid email or password.");
       }
     } catch (err) {
+      const errorMessage = err.response?.data?.message || 
+                          err.response?.data?.error || 
+                          "Invalid email or password.";
       Swal.fire({
         icon: "error",
         title: "Login Error",
-        text: "Invalid email or password.",
+        text: errorMessage,
         confirmButtonText: "OK",
       });
-      setError("Invalid email or password.");
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
