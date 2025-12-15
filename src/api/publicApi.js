@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const publicApi = axios.create({
-  baseURL: "https://polivar.teamqeematech.site/api/shop/",
+  baseURL: "https://el-nokhba.teamqeematech.site/api/shop/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
