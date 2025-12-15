@@ -23,7 +23,7 @@ const BannerOne = () => {
 
   // ✅ Default fallback image
   const defaultImage =
-    "https://polivar.teamqeematech.site/storage/sliders/zxx8zVRk6TfQw6V8Xdy8Is7p8r4UvbyeH9bd2aEb.jpg";
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREhkF5-7gGqFHAlOrKxwOxLpfH4scBD0qcFQ&s";
 
   function SampleNextArrow(props) {
     const { className, onClick } = props;
