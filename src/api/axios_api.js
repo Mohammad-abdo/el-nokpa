@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://el-nokhba.teamqeematech.site/api", // غيّرها حسب الـ Base URL في Postman
-  // baseURL: ""https://el-nokhba.teamqeematech.site/api", // غيّرها حسب الـ Base URL في Postman
+  baseURL: "https://polivar.teamqeematech.site/api", // غيّرها حسب الـ Base URL في Postman
+  // baseURL: ""https://polivar.teamqeematech.site/api", // غيّرها حسب الـ Base URL في Postman
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -14,7 +14,7 @@ export const authAPI = {
   login: (email, password) => {
     console.log(
       "📤 Sending login request to:",
-      ""https://el-nokhba.teamqeematech.site/api/login"
+      ""https://polivar.teamqeematech.site/api/login"
     );
     return api.post("login", { email, password });
   },
@@ -23,7 +23,7 @@ export const authAPI = {
   register: (formData) => {
     console.log(
       "📤 Sending register request to:",
-      ""https://el-nokhba.teamqeematech.site/api/register"
+      ""https://polivar.teamqeematech.site/api/register"
     );
     return api.post("register", formData, {
       headers: {

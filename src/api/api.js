@@ -154,7 +154,7 @@ export const toggleLocalWishlistItem = (productId) => {
 };
 
 export const api = axios.create({
-  baseURL: "https://el-nokhba.teamqeematech.site/api/",
+  baseURL: "https://polivar.teamqeematech.site/api/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -162,7 +162,7 @@ export const api = axios.create({
 });
 
 export const publicApi = axios.create({
-  baseURL: "https://el-nokhba.teamqeematech.site/api/",
+  baseURL: "https://polivar.teamqeematech.site/api/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
